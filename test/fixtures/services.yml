@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Km: 1
+  Date: 
+  Oil: 1
+
+two:
+  Km: 1
+  Date: 
+  Oil: 1
