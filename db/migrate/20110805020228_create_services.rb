@@ -1,9 +1,9 @@
 class CreateServices < ActiveRecord::Migration
   def self.up
     create_table :services do |t|
-      t.integer :Km
-      t.date :Date
-      t.string :Oil
+      t.integer :km
+      t.date :date
+      t.string :oil
 
       t.timestamps
     end

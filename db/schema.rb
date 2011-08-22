@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(:version => 20110805020228) do
 
   create_table "services", :force => true do |t|
-    t.integer  "Km"
-    t.date     "Date"
-    t.string   "Oil"
+    t.integer  "km"
+    t.date     "date"
+    t.string   "oil"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
