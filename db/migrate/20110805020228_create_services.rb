@@ -4,6 +4,7 @@ class CreateServices < ActiveRecord::Migration
       t.integer :km
       t.date :date
       t.string :oil
+      t.integer :car_id, :null => false
 
       t.timestamps
     end

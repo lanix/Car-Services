@@ -3,6 +3,7 @@ class Service < ActiveRecord::Base
 	validate :validates_km, :if => :something_in_db?
 	validate :validates_date, :if => :something_in_db?
 	validates_presence_of :km, :oil
+	belongs_to :car
 	
 	def validates_km
 		validates_numericality_of :km, :greater_than => Service.last.km

@@ -1,6 +1,10 @@
 CarService::Application.routes.draw do
 
+  resources :cars
 
+  match "/auth/:provider/callback", :to => "sessions#create"
+  match "/cars/:car_id", :to =>  "cars#select"
+  match "/signout" => "sessions#destroy" , :as => :signout
   resources :services
 
 root :to => "Home#index"

@@ -1,2 +1,19 @@
-<h1>Hello Rails!</h1>
-<%= link_to "My Car Services", services_path() %>
+<h1>Welcome to Car Care Center</h1>
+<p id="notice"><%= notice %></p>
+<% if current_user %>
+  Welcome <%= current_user.name %>!<br/>
+  <a href="/cars">
+  <%= image_tag "MyCars.png", :size => "64x64", :alt => "My Cars" %>
+  </a>
+  <a href="/services">
+  <%= image_tag "MyServices.png", :size => "64x64", :alt => "My Services" %>
+  </a><br/>
+  <%= link_to "Sign Out", signout_path %><br/>
+<% else %>
+  <%= link_to "Sign in with:", "/auth/twitter" %><br/>
+  <a href="/auth/twitter">
+  <%= image_tag "twitter_64.png", :size => "64x64", :alt => "Twitter" %>
+  </a>
+<% end %>
+
+

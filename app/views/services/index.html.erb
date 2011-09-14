@@ -1,6 +1,7 @@
 <h1>Listing services</h1>
 
 <table>
+<% if current_car %>
   <tr>
     <th>Km</th>
     <th>Date</th>
@@ -10,18 +11,23 @@
     <th></th>
   </tr>
 
-<% @services.each do |service| %>
-  <tr>
-    <td><%= service.km %></td>
-    <td><%= service.date %></td>
-    <td><%= service.oil %></td>
-    <td><%= link_to 'Show', service %></td>
-    <td><%= link_to 'Edit', edit_service_path(service) %></td>
-    <td><%= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <% current_car.services.each do |service| %>
+      <tr>
+        <td><%= service.km %></td>
+        <td><%= service.date %></td>
+        <td><%= service.oil %></td>
+        <td><%= link_to 'Edit', edit_service_path(service) %></td>
+        <td><%= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+<% else %>
+No car is selected
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'Main', root_path %>
+<br/>
+<% if current_car %>
+  <%= link_to 'New Service', new_service_path %>
+<% end %>
